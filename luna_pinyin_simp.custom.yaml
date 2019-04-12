@@ -60,11 +60,12 @@ patch:
 
 
   custom_phrase:
-    dictionary: 
-      - "luna_pinyin.diy"
-      - "luna_pinyin.extended.idf/luna_pinyin.idf"
+    # dictionary: 
+    #   - "luna_pinyin.diy"
+    #   - "luna_pinyin.extended.idf/luna_pinyin.idf"
+    dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
     user_dict: custom_phrase
     db_class: stabledb
-    enable_completion: false
-    enable_sentence: false
-    initial_quality: 1
+    enable_completion: true
+    enable_sentence: true
+    initial_quality: 2
