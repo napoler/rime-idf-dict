@@ -1,0 +1,44 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 「Rime词库扩展计划」——为小狼毫打造一个强大好用的词库（OpenCC重制版） by @imy0823
+#
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 於重新部署後生效
+#
+
+---
+name: luna_pinyin.chat
+version: "2014.09.07"
+sort: by_weight
+use_preset_vocabulary: true
+...
+
+
+阿姆達爾定律	a mu da er ding lv
+阿姆斯特朗公理	a mu si te lang gong li
+
+
+一一列舉		1
+一一堪垂淚		1
+
+AA制	a a zhi	100
+ATM機	a t m ji	100
+Android	android	100
+english english 100
+
+正是時候了
+支持你
+知道了吧
+知道沒
+金穎穎
+今天上班
+聽不見嘛
+
+root权限 root权限
+U盘 u pan
