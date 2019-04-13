@@ -64,6 +64,8 @@ def main(argv):   # idf generator
         i += 1
 
 
+    # open(outputfile, 'w', encoding='utf-8')
+
     source='./template/luna_pinyin.idf.dict.yaml'
     # adding exception handling
     try:
@@ -76,60 +78,29 @@ def main(argv):   # idf generator
     except:
         print("Unexpected error:", sys.exc_info())
         exit(1)
-    # open(outputfile, 'w', encoding='utf-8')
+
     # with open(outputfile, 'w', encoding='utf-8') as f:
     with open(outputfile, 'a', encoding='utf-8') as f:
+        # head=open(source, 'a', encoding='utf-8')
+
+        # f.write(head)
 
 
-
-
+        # f.write('# Rime dictionary\n')
+        # f.write('# encoding: utf-8\n\n')
+        # f.write('---\n')
+        # f.write('name: luna_pinyin.idf\n')
+        # f.write('version: "2019.04.13"\n')
+        # f.write('sort: by_weight\n')
+        # f.write('use_preset_vocabulary: true\n')
+        # f.write('---\n\n')
+ 
 
         for key, value in id_freq.items():
-            # if isinstance(key,str):
-            #   print ("d is str")
-            # print('key',key)
-            # k='你是谁'
-            # if isinstance(k,str):
-            #   print ("k is str")
-            print('key',key)
-            print('value',value)
-            #加入拼音
-            
-            # 启用多音字模式
-            # k=pinyin(key,style=Style.NORMAL, heteronym=False)
-            # print(pinyin(k , style=Style.NORMAL, heteronym=False))
 
-            items=pinyin(key,style=Style.NORMAL, heteronym=False)
-
-            #删除最后一个拼音做预测词库
-
-
-            print('长度',len(items))
-            new=items
-            for n in range(len(items)-2):  # 启用多音字模式
-                print('n',n)
-                print(new)
-                text_pinyin=''
-                for item in new:  # 启用多音字模式
-                    print(item[0])
-                    text_pinyin=text_pinyin+' '+item[0]
-                # print(text_pinyin)
-                f.write(key.strip() + "\t"+text_pinyin.strip()+"\t" + str((math.log(i / value, 2)+1)+90)+ '\n')
-                del(new[-1])
-
-
-            text_pinyin=''
-            for item in items:
-                print(item[0])
-                text_pinyin=text_pinyin+' '+item[0]
-
-                # if isinstance(item,list):
-                #     print ("b is list")
-                #     for i in item:
-                #         print(i)
-            print('测试',text_pinyin.strip(),'测试')
-            f.write(key.strip() + "\t"+text_pinyin.strip()+"\t" + str((math.log(i / value, 2)+1)+100) + '\n')
-            # #f.write(key + '		' + str(math.log(i / value, 2)) + '\n')
+            # f.write(key.strip() + "\t"+"\t" + str((math.log(i / value, 2)+1)+100) + '\n')
+            # f.write(key + '		' + str(math.log(i / value, 2)) + '\n')
+            f.write(key +'\n')
 
 
 if __name__ == "__main__":

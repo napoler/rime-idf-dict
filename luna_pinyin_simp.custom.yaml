@@ -58,14 +58,30 @@ patch:
   # 本條補靪只在「小狼毫 0.9.30」、「鼠鬚管 0.9.25 」、「Rime-1.2」及更高的版本中起作用。
   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
 
-
+  #http://rime-aca.tumblr.com/post/67241713724/rime%E6%96%B9%E6%A1%88%E8%A3%BD%E4%BD%9C%E8%A9%B3%E8%A7%A3
   custom_phrase:
     # dictionary: 
     #   - "luna_pinyin.diy"
     #   - "luna_pinyin.extended.idf/luna_pinyin.idf"
-    dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
+    # dictionary: "luna_pinyin.diy"
+    # dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
+    # dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
     user_dict: custom_phrase
-    db_class: stabledb
-    enable_completion: true
-    enable_sentence: true
+    # db_class: stabledb
+    #db_class: 設定用戶詞典類型，可設tabledb〔文本〕或userdb〔二進制〕
+    db_class: userdb
+    #enable_encoder: 是否開啓自動造詞〔僅table_translator有效〕
+    enable_encoder: false
+
+    #encode_commit_history: 是否對已上屛詞自動成詞〔僅table_translator有效〕
+    encode_commit_history: true
+    #max_phrase_length: 最大自動成詞詞長〔僅table_translator有效〕
+    max_phrase_length: true
+    #enable_completion: 提前顯示尚未輸入完整碼的字〔僅table_translator有效〕
+    enable_completion: false
+    #enable_user_dict: 是否开启用户词典〔用户词典记录动态字词频，用户词〕
+    enable_user_dict: true
+    #enable_sentence: 是否開啓自動造句
+    enable_sentence: false
+    #initial_quality: 設定此翻譯器出字優先級
     initial_quality: 2

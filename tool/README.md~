@@ -14,8 +14,15 @@ $ pip install jieba
 
 ```bash
 $ python gen_idf.py -i <inputdir> -o <outputfile>
+
+
+python3 gen_idf.py -i test/ -o luna_pinyin.idf.dict.yaml
 ```
 
 - `-i <inputdir>`   ： 语料库目录，程序会扫描目录下的所有文件
 - `-o <outputfile>` ： 保存idf到指定文件
 
+
+
+pip install jieba
+pip install pypinyin

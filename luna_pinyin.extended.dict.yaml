@@ -22,9 +22,9 @@ use_preset_vocabulary: true
 import_tables:
   - luna_pinyin      #系统自带词库，无意外必须开启。
   #加载扩充词库
-  - luna_pinyin.extended/luna_pinyin.sogou_mini      #搜狗词库
+  #- luna_pinyin.extended/luna_pinyin.sogou_mini      #搜狗词库
 
-  - luna_pinyin.extended/luna_pinyin.daily   #日常生活用词，衣、食、住、行、地放、称呼等等。31w
+  #- luna_pinyin.extended/luna_pinyin.daily   #日常生活用词，衣、食、住、行、地放、称呼等等。31w
 
   #idf词库
   - luna_pinyin.extended.idf/luna_pinyin.idf
