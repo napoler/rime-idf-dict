@@ -13,14 +13,14 @@
 #
 
 ---
-name: luna_pinyin.chat
+name: luna_pinyin.diy
 version: "2014.09.07"
 sort: by_weight
 use_preset_vocabulary: true
 ...
 
 
-阿姆達爾定律	a mu da er ding lv牛逼
+阿姆達爾定律	a mu da er ding lv
 阿姆斯特朗公理	a mu si 100
 林荫大道  lin yin da	8.859224161978204
 林荫大道	lin yin	8.859224161978204
@@ -43,6 +43,15 @@ use_preset_vocabulary: true
 二十根	er shi	10.0
 细看	xi kan	10.0
 
+
+
+一一列舉		1
+一一堪垂淚		1
+一一生綠苔		1
+一一點		1
+一上午		1
+一上班		1
+一上車		1
 
 
 AA制	a a zhi	100

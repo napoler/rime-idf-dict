@@ -27,8 +27,8 @@ import_tables:
   #- luna_pinyin.extended/luna_pinyin.daily   #日常生活用词，衣、食、住、行、地放、称呼等等。31w
 
   #idf词库
+  # - luna_pinyin.extended.idf/luna_pinyin.idf
   - luna_pinyin.extended.idf/luna_pinyin.idf
-  #- luna_pinyin.extended.idf/luna_pinyin.idf_test
   #- luna_pinyin.extended.idf/luna_pinyin.jieba
 
   #DiY词库

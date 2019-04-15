@@ -94,13 +94,13 @@ def main(argv):   # idf generator
         # f.write('sort: by_weight\n')
         # f.write('use_preset_vocabulary: true\n')
         # f.write('---\n\n')
- 
 
         for key, value in id_freq.items():
 
-            # f.write(key.strip() + "\t"+"\t" + str((math.log(i / value, 2)+1)+100) + '\n')
-            # f.write(key + '		' + str(math.log(i / value, 2)) + '\n')
-            f.write(key +'\n')
+
+            f.write(key.strip() + "\t" + str((math.log(i / value, 2)))+ '\n')
+
+            # f.write(key +'\n')
 
 
 if __name__ == "__main__":

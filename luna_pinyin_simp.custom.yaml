@@ -26,6 +26,7 @@
 #
 
 patch:
+  # switches/@0/reset: 1  #表示將 switcher 列表中的第一個元素（即 ascii_mode 開關）的初始值重設爲狀態1（即「英文」）。
   schema/dependencies:
     - emoji
   abc_segmentor/extra_tags:
@@ -40,9 +41,9 @@ patch:
   engine/translators:
     - punct_translator
     - r10n_translator
+    - simplifier  # 必要組件一
+    - uniquifier  # 必要組件二
     - reverse_lookup_translator
-    # - punct_translator
-    # - reverse_lookup_translator
     - script_translator
     - table_translator@custom_phrase
     - table_translator
@@ -64,24 +65,26 @@ patch:
     #   - "luna_pinyin.diy"
     #   - "luna_pinyin.extended.idf/luna_pinyin.idf"
     # dictionary: "luna_pinyin.diy"
-    # dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
+    dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
     # dictionary: "luna_pinyin.extended.idf/luna_pinyin.idf"
     user_dict: custom_phrase
-    # db_class: stabledb
+    db_class: stabledb
     #db_class: 設定用戶詞典類型，可設tabledb〔文本〕或userdb〔二進制〕
-    db_class: userdb
+    # db_class: userdb
     #enable_encoder: 是否開啓自動造詞〔僅table_translator有效〕
-    enable_encoder: false
+    enable_encoder: true
 
     #encode_commit_history: 是否對已上屛詞自動成詞〔僅table_translator有效〕
     encode_commit_history: true
     #max_phrase_length: 最大自動成詞詞長〔僅table_translator有效〕
     max_phrase_length: true
     #enable_completion: 提前顯示尚未輸入完整碼的字〔僅table_translator有效〕
-    enable_completion: false
+    #table_translator 默認開啓逐鍵提示。若要只出精確匹配輸入碼的候選字，可關閉這一選項。
+    enable_completion: true
     #enable_user_dict: 是否开启用户词典〔用户词典记录动态字词频，用户词〕
     enable_user_dict: true
+    #註：這個選項僅針對 table_translator，用於屏蔽倉頡、五筆中帶有太極圖章「☯」的連打詞句選項，不可作用於拼音、注音、速成等輸入方案。
     #enable_sentence: 是否開啓自動造句
-    enable_sentence: false
+    enable_sentence: true
     #initial_quality: 設定此翻譯器出字優先級
-    initial_quality: 2
+    initial_quality: 50

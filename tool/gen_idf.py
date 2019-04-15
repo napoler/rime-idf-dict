@@ -50,6 +50,7 @@ def main(argv):   # idf generator
             outputfile = arg
 
     documents = MyDocuments(inputdir)
+    
 
     ignored = {'', ' ', '', '。', '：', '，', '）', '（', '！', '?', '”', '“'}
     id_freq = {}
@@ -83,16 +84,21 @@ def main(argv):   # idf generator
 
 
 
-
+        # len('id_freq数目',id_freq.items())
         for key, value in id_freq.items():
+            print('key',key)
+            print('value',value)
+            # if value<1.1 :
+            #     continue
+                
             # if isinstance(key,str):
             #   print ("d is str")
             # print('key',key)
             # k='你是谁'
             # if isinstance(k,str):
             #   print ("k is str")
-            print('key',key)
-            print('value',value)
+            # print('key',key)
+            # print('value',value)
             #加入拼音
             
             # 启用多音字模式
@@ -104,31 +110,32 @@ def main(argv):   # idf generator
             #删除最后一个拼音做预测词库
 
 
-            print('长度',len(items))
+            # print('长度',len(items))
             new=items
-            for n in range(len(items)-2):  # 启用多音字模式
+            for n in range(len(items)-1):  # 启用多音字模式
                 print('n',n)
-                print(new)
+                # print(new)
                 text_pinyin=''
                 for item in new:  # 启用多音字模式
                     print(item[0])
                     text_pinyin=text_pinyin+' '+item[0]
                 # print(text_pinyin)
-                f.write(key.strip() + "\t"+text_pinyin.strip()+"\t" + str((math.log(i / value, 2)+1)+90)+ '\n')
+                f.write(key.strip() + "\t"+text_pinyin.strip()+"\t" + str((math.log(i / value, 2)/(2+n*2)))+ '\n')
                 del(new[-1])
 
 
-            text_pinyin=''
-            for item in items:
-                print(item[0])
-                text_pinyin=text_pinyin+' '+item[0]
+            # text_pinyin=''
+            # for item in items:
+            #     print(item[0])
+            #     text_pinyin=text_pinyin+' '+item[0]
 
-                # if isinstance(item,list):
-                #     print ("b is list")
-                #     for i in item:
-                #         print(i)
-            print('测试',text_pinyin.strip(),'测试')
-            f.write(key.strip() + "\t"+text_pinyin.strip()+"\t" + str((math.log(i / value, 2)+1)+100) + '\n')
+            #     # if isinstance(item,list):
+            #     #     print ("b is list")
+            #     #     for i in item:
+            #     #         print(i)
+            # # print('测试',text_pinyin.strip(),'测试')
+            # # f.write(key.strip() + "\t"+text_pinyin.strip()+"\t" + str((math.log(i / value, 2)-5)) + '\n')
+            # f.write(key.strip() + "\t"+text_pinyin.strip()+'\n')
             # #f.write(key + '		' + str(math.log(i / value, 2)) + '\n')
 
 

@@ -20,6 +20,9 @@ python3 gen_idf.py -i test/ -o luna_pinyin.idf.dict.yaml
 
 
 python3 gen_idf_mini.py -i test/ -o luna_pinyin.idf.dict.yaml
+
+
+python3 gen_idf.py -i test/ -o ../luna_pinyin.extended.idf/luna_pinyin.idf.dict.yaml
 ```
 
 - `-i <inputdir>`   ： 语料库目录，程序会扫描目录下的所有文件
